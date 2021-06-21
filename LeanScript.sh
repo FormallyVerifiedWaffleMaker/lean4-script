@@ -41,3 +41,12 @@ if [[ -e "./lean4" ]]; then
 fi
 
 git clone $REPO_URL lean4
+
+cd lean4
+mkdir -p build/release
+cd build/release
+cmake ../.. -D CMAKE_CXX_COMPILER=g++
+make stage0
+make stage1
+make stage2
+make stage3
